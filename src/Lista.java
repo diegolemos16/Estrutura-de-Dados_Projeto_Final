@@ -11,13 +11,12 @@ public class Lista {
         no.proximo = inicio;
         inicio = no;
         tamanho++;
-
     }
-
-    public Contato pesquisarContato(int codigo) {
+//pesqusia tem que ser por nome
+    public Contato pesquisarContato(String nome) {
         No no = inicio;
         while (no != null){
-            if (no.info.codigo == codigo){
+            if (no.info.nome == nome){
                 return no.info;
             }
             no = no.proximo;

@@ -17,9 +17,20 @@ public class Hash {
         vetor[chave].adicionarContato(contato);
     }
 
-    Contato pesquisarContato(int codigo){
-        return vetor[codigo % operador].pesquisarContato(codigo);
+    void excluirContato(Contato contato){
+
     }
+   void pesquisarContato(String nome){
+
+   }
+
+   void exibirAgenda(){
+
+   }
+
+//    Contato pesquisarContato(int codigo){
+//        return vetor[codigo % operador].pesquisarContato(codigo);
+//    }
 
     public String toString(){
         String out = "";
