@@ -1,25 +1,27 @@
 public class Hash {
 
-    int operador;
+    private int tamTabela;
+    private Lista [] vetor;
 
-    Lista [] vetor;
-
-    Hash(int operador) {
-        this.operador = operador;
-        vetor = new Lista[operador];
-        for (int i = 0; i < operador; i++){
+    public Hash(int tamTabela) {
+        this.tamTabela = tamTabela;
+        vetor = new Lista[tamTabela];
+        for (int i = 0; i < tamTabela; i++){
             vetor[i] = new Lista();
+            break;
         }
     }
 
-    void adicionarContato(Contato contato){
-        int chave = contato.codigo % operador;
-        vetor[chave].adicionarContato(contato);
+    void addContato(Contato contato){
+        int chave = contato.codigo % tamTabela;
+        vetor[chave].addContato(contato);
+
     }
 
     void excluirContato(Contato contato){
 
     }
+
    void pesquisarContato(String nome){
 
    }
@@ -34,9 +36,9 @@ public class Hash {
 
     public String toString(){
         String out = "";
-        for (int i = 0; i < operador; i++) {
+        for (int i = 0; i < tamTabela; i++) {
             out += "" + i + ": ";
-            out += vetor[i % operador] + "\n";
+            out += vetor[i % tamTabela] + "\n";
         }
         return out;
     }

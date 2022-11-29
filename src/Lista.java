@@ -1,10 +1,10 @@
 public class Lista {
 
-    No inicio;
+    private No inicio;
+    private int tamanho;
 
-    int tamanho;
-
-    public void adicionarContato(Contato info) {
+    
+    public void addContato(Contato info) {
 
         No no = new No();
         no.info = info;
