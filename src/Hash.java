@@ -1,15 +1,16 @@
+import org.jetbrains.annotations.NotNull;
+
 public class Hash {
 
-    private int tamTabela;
-    private Lista [] vetor;
+    int tamTabela;
+    Lista [] vetor;
 
     public Hash(int tamTabela) {
         this.tamTabela = tamTabela;
         vetor = new Lista[tamTabela];
         for (int i = 0; i < tamTabela; i++){
             vetor[i] = new Lista();
-            break;
-        }
+                    }
     }
 
     void addContato(Contato contato){
