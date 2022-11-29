@@ -42,7 +42,7 @@ public class Lista {
     }
 
 
-    public Contato pesquisarContato(int codigo) {
+    public Contato pesquisarContato(String nome) {
         No no = comeco;
         while (no != null){
             if (no.info.nome == codigo){

@@ -1,18 +1,63 @@
+import java.util.Scanner;
+
 public class Agenda {
 
     public static void main(String[] args) {
 
-        Hash hash = new Hash(6);
+        Hash hash = new Hash(15);
+        Scanner s = new Scanner(System.in);
 
-        hash.addContato(new Contato(1,"Diego Lemos Machado", "(85)40040001","01/01/1990","diegolemos@unifor.com","(85)999887766"));
-        hash.addContato(new Contato(2,"Morgana Ramos", "(85)40040004","01/01/1992","morganaramos@unifor.br","(85)999776655"));
-        hash.addContato(new Contato(3,"Alano Regis", "(85)344776252", "10/06/1975","alano.regis@gmail.com","(85)999685525"));
-        hash.addContato(new Contato(4,"Mariana Milfont","(85)34458225", "13/04/2010","marianamilfont@gmail.com","(85)99695582"));
-        hash.addContato(new Contato(5,"Gabriela Gomes","(85)34773269", "07/09/1979","gabigomes@gmail.com","(85)995852545"));
-        hash.addContato(new Contato(6,"Raul Monte dos Anjos","(85)34773140", "15/04/1988","rauldosanjos@gmail.com","(85)994852565"));
+        int opcao = 0;
+        int codigo = 1;
 
-        System.out.println(hash);
+        while (opcao != 5) {
+            Opcoes.opcoesMenu();
+            opcao = s.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    System.out.println("Informe o nome do contato: ");
+                    String nome = s.next();
+                    System.out.println("Informe o numero do telefone: ");
+                    String telefone = s.next();
+                    System.out.println("Informe a data de nascimento: ");
+                    String nascimento = s.next();
+                    System.out.println("Informe o email: ");
+                    String email = s.next();
+                    System.out.println("Informe o numero do celular: ");
+                    String celular = s.next();
+                    hash.addContato(new Contato(codigo, nome, telefone, nascimento, email, celular));
+                    System.out.println("Contato Inserido com sucesso!");
+                    codigo++;
+                    break;
+
+                case 2:
+                    System.out.println("Digite o nome do contato qa ser excluido: ");
+                    String nome1 = s.next();
+                    hash.excluir(nome1);
+                    break;
+
+                case 3:
+                    System.out.println("Digite o nome do contato para ser pesquisado: ");
+                    String nome2 = s.next();
+                    System.out.println(hash.pesquisarNome(nome2));
+                    break;
+
+                case 4:
+                    hash.exibirAgenda();
+                    break;
+
+                case 5: // Finalizar
+                    break;
+
+                default:
+                    System.out.println("O número inválido! Digite um número de 1 a 5.");
+            }
+        }
     }
-
-
 }
+
+
+
+
+

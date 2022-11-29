@@ -4,7 +4,7 @@ public class Opcoes {
 
     }
 
-        public static void opcoes() {
+        public static void opcoesMenu() {
 
             System.out.println("------------ MENU INICIAL ------------");
             System.out.println(" 1. Adicionar contato");

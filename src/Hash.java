@@ -1,5 +1,3 @@
-import org.jetbrains.annotations.NotNull;
-
 public class Hash {
 
     int tamTabela;
@@ -19,11 +17,11 @@ public class Hash {
 
     }
 
-    void excluirContato(Contato contato){
+    void excluir(String contato){
 
     }
 
-   void pesquisarContato(String nome){
+   void pesquisarNome(String nome){
 
    }
 
