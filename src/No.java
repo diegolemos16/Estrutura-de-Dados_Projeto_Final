@@ -4,6 +4,10 @@ public class No {
     Contato info;
     No proximo;
 
+    public No() {
+
+    }
+
     public No getProximo() {
         return proximo;
     }

@@ -11,27 +11,34 @@ public class Hash {
                     }
     }
 
-    void addContato(Contato contato){
+    public void addContato(Contato contato){
         int chave = contato.codigo % tamTabela;
         vetor[chave].addContato(contato);
 
     }
 
-    void excluir(String contato){
+
+    // Diego
+    public void excluirContato(String nome){
 
     }
 
-   void pesquisarNome(String nome){
+    public Contato pesquisarContato(int codigo){
+        Contato resultado = vetor[codigo % tamTabela].pesquisarContato(codigo);
+        return resultado;
+    }
 
+    // Diego
+   public Contato pesquisarPorNome(String nome){
+
+       return null;
    }
 
    void exibirAgenda(){
+       System.out.println(this);
 
    }
 
-//    Contato pesquisarContato(int codigo){
-//        return vetor[codigo % operador].pesquisarContato(codigo);
-//    }
 
     public String toString(){
         String out = "";

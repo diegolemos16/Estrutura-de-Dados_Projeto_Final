@@ -7,7 +7,7 @@ public class Lista {
         this.tamanho = tamanho;
     }
 
-// função para adicionar o contado na lista
+// adiciona o contado na lista
     public void addContato(Contato info) {
 
         No no = new No();
@@ -16,7 +16,7 @@ public class Lista {
         comeco = no;
         tamanho++;
     }
-//função que delta o contato da lista
+//deleta o contato da lista
     public void excluirContato(Contato contato){
         No no = comeco;
         No anterior = new No();
@@ -26,26 +26,45 @@ public class Lista {
             comeco = null;
         } else {
             while (no != null) {
-                if (contato.getCodigo() == no.getContato().getCodigo()){
+                if (contato.getCodigo() == no.getContato().getCodigo()) {
                     proximo = no.getProximo();
-                    anterior = comeco;
+                    No noAnterior = comeco;
 
-                    try{
-                        while(anterior != null){
-                            if (no.getContato().getCodigo() == anterior.getProximo().getContato().getCodigo()){
+                    try {
+                        while (noAnterior != null) {
+                            if (no.getContato().getCodigo() == noAnterior.getProximo().getContato().getCodigo()) {
                                 anterior = noAnterior;
+                                anterior.setProximo(proximo);
+                                break;
                             }
+                            noAnterior = noAnterior.getProximo();
                         }
+                    } catch (Exception e) {
+                        System.out.println("Não foi possivel deletar o contato");
                     }
+                }
+                no = no.getProximo();
+            }
         }
-
+        tamanho--;
     }
 
 
-    public Contato pesquisarContato(String nome) {
+    public Contato pesquisarContato(int codigo) {
         No no = comeco;
         while (no != null){
-            if (no.info.nome == codigo){
+            if (no.contato.codigo == codigo){
+                return no.info;
+            }
+            no = no.proximo;
+        }
+        return null;
+    }
+
+    public Contato pesquisarNome(String nome) {
+        No no = comeco;
+        while (no != null){
+            if (no.equals(no.contato.nome)){
                 return no.info;
             }
             no = no.proximo;
@@ -56,7 +75,7 @@ public class Lista {
 
     public String toString() {
         String out = "";
-        No no = inicio;
+        No no = comeco;
         while (no != null){
             out += no.info + " ";
             no = no.proximo;

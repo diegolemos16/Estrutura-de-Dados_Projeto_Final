@@ -16,7 +16,7 @@ public class Agenda {
 
             switch (opcao) {
                 case 1:
-                    System.out.println("Informe o nome do contato: ");
+                    System.out.println("Informe o nome do contato (em maiusculo): ");
                     String nome = s.next();
                     System.out.println("Informe o numero do telefone: ");
                     String telefone = s.next();
@@ -34,20 +34,20 @@ public class Agenda {
                 case 2:
                     System.out.println("Digite o nome do contato qa ser excluido: ");
                     String nome1 = s.next();
-                    hash.excluir(nome1);
+                    hash.excluirContato(nome1);
                     break;
 
                 case 3:
-                    System.out.println("Digite o nome do contato para ser pesquisado: ");
+                    System.out.println("Digite o nome do contato para ser pesquisado (em maiusculo): ");
                     String nome2 = s.next();
-                    System.out.println(hash.pesquisarNome(nome2));
+                    System.out.println(hash.pesquisarPorNome(nome2));
                     break;
 
                 case 4:
                     hash.exibirAgenda();
                     break;
 
-                case 5: // Finalizar
+                case 5:
                     break;
 
                 default:

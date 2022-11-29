@@ -1,3 +1,4 @@
+import java.util.Objects;
 
 
 public class Contato {
@@ -18,7 +19,6 @@ public class Contato {
         this.email = email;
         this.celular = celular;
     }
-
 
     public int getCodigo() {
         return codigo;
@@ -67,6 +67,8 @@ public class Contato {
     public void setCelular(String celular) {
         this.celular = celular;
     }
+
+
 
     @Override
     public String toString() {
