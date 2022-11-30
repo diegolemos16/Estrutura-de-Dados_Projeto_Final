@@ -1,23 +1,41 @@
 import java.util.Objects;
 
-
 public class Contato {
 
-    int codigo;
-    String nome;
-    String telefone;
-    String nascimento;
-    String email;
-    String celular;
+    private int codigo;
 
+    private String nome;
+
+    private String telefone;
+
+    private String nascimento;
+
+    private String email;
+
+    private String celular;
+
+    private static int contador = 0;
 
     public Contato(int codigo, String nome, String telefone, String nascimento, String email, String celular) {
-        this.codigo = codigo;
+        Contato.contador++;
+        this.codigo = Contato.contador;
         this.nome = nome;
         this.telefone = telefone;
         this.nascimento = nascimento;
         this.email = email;
         this.celular = celular;
+    }
+
+    @Override
+    public String toString() {
+        return "Contato{" +
+                "codigo=" + codigo +
+                ", nome='" + nome + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", nascimento='" + nascimento + '\'' +
+                ", email='" + email + '\'' +
+                ", celular='" + celular + '\'' +
+                '}';
     }
 
     public int getCodigo() {
@@ -28,13 +46,9 @@ public class Contato {
         this.codigo = codigo;
     }
 
-    public String getNome() {
-        return nome;
-    }
+    public String getNome() { return nome; }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+    public void setNome(String nome) { this.nome = nome; }
 
     public String getTelefone() {
         return telefone;
@@ -69,16 +83,16 @@ public class Contato {
     }
 
 
-
-    @Override
-    public String toString() {
-        return "Contato{" +
-                "codigo=" + codigo +
-                ", nome='" + nome + '\'' +
-                ", telefone='" + telefone + '\'' +
-                ", nascimento='" + nascimento + '\'' +
-                ", email='" + email + '\'' +
-                ", celular='" + celular + '\'' +
-                '}';
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Contato other = (Contato) obj;
+        return Objects.equals(celular, other.celular) && codigo == other.codigo && Objects.equals(email, other.email)
+                && Objects.equals(nascimento, other.nascimento) && Objects.equals(nome, other.nome)
+                && Objects.equals(telefone, other.telefone);
     }
 }
