@@ -1,6 +1,6 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
+//"Projeto de Diego Lemos Machado - Matrícula 2124689 e Morgana Ramos Albuquerque - Matrícula 2124634"
 public class Agenda {
 
     public static void main(String[] args) {
@@ -15,6 +15,7 @@ public class Agenda {
 
         try{
             while (opcao!=5) {
+                System.out.println("Projeto de Diego Lemos Machado - Matrícula 2124689 e Morgana Ramos Albuquerque - Matrícula 2124634");
                 Opcoes.opcoesMenu();
                 opcao = s.nextInt();
                 switch (opcao) {
