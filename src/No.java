@@ -1,18 +1,16 @@
+
 public class No {
 
-    Contato contato;
-    Contato info;
-    No proximo;
+    private Contato contato;
+
+    private No proximo;
 
     public No() {
 
     }
 
-    public No getProximo() {
-        return proximo;
-    }
-
-    public void setProximo(No proximo) {
+    public No(Contato info, No proximo) {
+        this.contato = info;
         this.proximo = proximo;
     }
 
@@ -23,4 +21,13 @@ public class No {
     public void setContato(Contato contato) {
         this.contato = contato;
     }
+
+    public No getProximo() {
+        return proximo;
+    }
+
+    public void setProximo(No proximo) {
+        this.proximo = proximo;
+    }
+
 }
